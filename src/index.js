@@ -29,7 +29,7 @@ function ScheduleTitle() {
     <input
       type="text"
       id="schedule-title"
-      class="react-cyclette-input"
+      className="react-cyclette-input"
       placeholder="Me Schedule Title!"
     />
   );
@@ -46,7 +46,7 @@ function ScheduleIntervals() {
     <section>
       <h4>Me Intervals List!</h4>
       <AddIntervalButton />
-      <ol>
+      <ol id="schedule-list">
         <Interval />
         <Interval />
         <Interval />
@@ -56,20 +56,29 @@ function ScheduleIntervals() {
 }
 
 //    the interval list has a button to add more elements *
-function AddIntervalButton() {
-  return <button>+</button>;
+class AddIntervalButton extends React.Component {
+  addElement() {
+    // https://stackoverflow.com/questions/58328048/is-there-a-way-to-append-dynamically-to-a-ul-ul-in-reactjs
+    console.log("wow such advancements");
+  }
+
+  render() {
+    return <button onClick={this.addElement}>+</button>;
+  }
 }
 
 //    the interval list has at least one element *
-function Interval() {
+class Interval extends React.Component {
   //      each element has a title *
   //      each element has a minute counter *
-  return (
-    <li>
-      Me Sample Interval!
-      <input type="number"></input>
-    </li>
-  );
+  render() {
+    return (
+      <li>
+        Me Sample Interval!
+        <input type="number"></input>
+      </li>
+    );
+  }
 }
 
 // ===================================

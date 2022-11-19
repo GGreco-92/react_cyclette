@@ -13,18 +13,6 @@ root.render(
 // ===================================
 
 // there is a form-like structure *
-//  the form has a title *
-//  the form has a total length *
-//  the form has an interval list *
-//    the interval list has at least one element *
-//      each element has a title *
-//      each element has a minute counter *
-//    the interval list has a button to add more elements *
-// and there is a print preview *
-//  the preview has a title *
-//  the preview has a render *
-//  the preview has a print button
-
 function Schedule() {
   return (
     <section id="schedule">
@@ -35,14 +23,24 @@ function Schedule() {
   );
 }
 
+//  the form has a customizable title *
 function ScheduleTitle() {
-  return <h2>Me Schedule Title!</h2>;
+  return (
+    <input
+      type="text"
+      id="schedule-title"
+      class="react-cyclette-input"
+      placeholder="Me Schedule Title!"
+    />
+  );
 }
 
+//  the form has a total length *
 function ScheduleLength() {
   return <h3>Me Schedule Length!</h3>;
 }
 
+//  the form has an interval list *
 function ScheduleIntervals() {
   return (
     <section>
@@ -57,11 +55,15 @@ function ScheduleIntervals() {
   );
 }
 
+//    the interval list has a button to add more elements *
 function AddIntervalButton() {
-  return <button>Me Add Interval Button!</button>;
+  return <button>+</button>;
 }
 
+//    the interval list has at least one element *
 function Interval() {
+  //      each element has a title *
+  //      each element has a minute counter *
   return (
     <li>
       Me Sample Interval!
@@ -70,6 +72,10 @@ function Interval() {
   );
 }
 
+// ===================================
+
+// ...and there is a print preview *
+//  the preview has a title *
 function Preview() {
   return (
     <section id="preview">
@@ -80,10 +86,12 @@ function Preview() {
   );
 }
 
+//  the preview has a render *
 function PreviewRender() {
   return <div>I HAVE NO CLUE - FRAMES OR SOMETHING I GUESS</div>;
 }
 
+//  the preview has a print button *
 function PrintPreviewButton() {
   return <button>Me Print Preview Button!</button>;
 }
